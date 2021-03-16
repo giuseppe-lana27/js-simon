@@ -17,10 +17,8 @@ while (randomNumbers.length < 5){
   }
 }
 console.log(randomNumbers);
-
 // 2. mostro alert con i numeri da ricordare
 alert("Questi sono i numeri da ricordare: " + randomNumbers);
-
 // 3. dopo 30 secondi chiedo all'utente di inserire i numeri che aveva visualizzato
 setTimeout(function () {
   for ( var i = 0; i < 5; i++){
@@ -34,13 +32,19 @@ setTimeout(function () {
   }
   console.log(userNumbers);
   // 4. controllo quali e quanti numeri inseriti sono stati individuati tra quelli random
-  if (randomNumbers.includes(userNumber)){
-    alert("hai ricordato tutti i numeri " + randomNumbers + "hai totalizzato " + randomNumbers.length + "punti");
-  } else {
-    alert("Hai perso, ritenta");
+  var goodNumbers = [];
+  for ( var j = 0; j < userNumbers.length; j++){
+    if (randomNumbers.includes(userNumbers[j])){
+      goodNumbers.push(userNumbers[j]);
+    }
   }
-}, 5000);
-
+  // 5. stampo il risultato del gioco
+  if (goodNumbers.length != 0){
+    alert("Hai indovinato i seguenti numeri: " + goodNumbers + " in tutto hai indovinato: " + goodNumbers.length + " numeri");
+  } else {
+    alert("Non hai indovinato nessuno dei numeri, ritenta!");
+  }
+}, 3000);
 // funzione per generare numeri random
 function randomNumbersGenerator(){
   return Math.floor(Math.random() * 100) + 1;
