@@ -33,14 +33,13 @@ setTimeout(function () {
     }
   }
   console.log(userNumbers);
+  // 4. controllo quali e quanti numeri inseriti sono stati individuati tra quelli random
+  if (randomNumbers.includes(userNumber)){
+    alert("hai ricordato tutti i numeri " + randomNumbers + "hai totalizzato " + randomNumbers.length + "punti");
+  } else {
+    alert("Hai perso, ritenta");
+  }
 }, 5000);
-
-
-
-
-
-
-
 
 // funzione per generare numeri random
 function randomNumbersGenerator(){
