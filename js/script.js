@@ -44,7 +44,7 @@ setTimeout(function () {
   } else {
     alert("Non hai indovinato nessuno dei numeri, ritenta!");
   }
-}, 3000);
+}, 30000);
 // funzione per generare numeri random
 function randomNumbersGenerator(){
   return Math.floor(Math.random() * 100) + 1;
