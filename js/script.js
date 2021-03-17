@@ -21,11 +21,12 @@ console.log(randomNumbers);
 alert("Questi sono i numeri da ricordare: " + randomNumbers);
 // 3. dopo 30 secondi chiedo all'utente di inserire i numeri che aveva visualizzato
 setTimeout(function () {
-  for ( var i = 0; i < 5; i++){
+  while (userNumbers.length < 5){
     var userNumber = parseInt(prompt("Inserisci il numero che ricordi"));
     if ( isNaN(userNumber)){
-      userNumber = parseInt(prompt("Inserisci il numero che ricordi in valore numerico"));
-      userNumbers.push(userNumber);
+      alert("Inserisci un valore numerico");
+    } else if (userNumbers.includes(userNumber) == true){
+      alert("Inserisci un altro numero");
     } else {
       userNumbers.push(userNumber);
     }
